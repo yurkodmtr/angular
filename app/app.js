@@ -3,11 +3,11 @@ var app = angular.module('myApp', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl : "app/components/index/index.html",
+            templateUrl : "app/components/index/index.html?v=" + new Date(),
             controller : "indexCtrl"
         })
         .when("/about", {
-            templateUrl : "app/components/about/about.html",
+            templateUrl : "app/components/about/about.html?v=" + new Date(),
             controller : "aboutCtrl"
         });
 });

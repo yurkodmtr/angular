@@ -17,9 +17,10 @@ module.exports = function (grunt) {
             /* concat css*/
             css: {
                 src: [
-                    "assets/css/*.css"
+                    "assets/css/*.css",
+                    "!assets/css/main.min.css"
                 ],
-                dest: 'assets/css/main.min.css'
+                dest: 'assets/css/main.css'
             },
 
             /*concat main app dev*/
@@ -37,7 +38,7 @@ module.exports = function (grunt) {
         cssmin: {
             dist: {
                 files: {
-                    'assets/css/main.min.css': 'assets/css/main.min.css'
+                    'assets/css/main.min.css': 'assets/css/main.css'
                 }
             }
         },

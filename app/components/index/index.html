@@ -1,1 +1,72 @@
-1
+<h1>Table 1</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                RollNo
+            </th>
+            <th>
+                Percentage
+            </th>
+        </tr>
+    </thead>
+    <tr ng-repeat="item in json1">
+        <td>
+            {{item.Name}}
+        </td>
+        <td>
+            {{item.RollNo}}
+        </td>
+        <td>
+            {{item.Percentage}}
+        </td>
+    </tr>
+</table>
+
+<h1>Color table</h1>
+<h2>Add color</h2>
+<form class="form-inline">
+    <div class="form-group">
+        <input class="form-control" ng-model="newColorName" ng-change="changexxx()">
+    </div>
+    <div class="form-group">
+        <input class="form-control" ng-model="newColorHex">
+    </div>
+    <button type="submit" class="btn_add_color btn btn-default" ng-click="addColor(newColorName, newColorHex)">Add new color</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            <span>colorName</span>
+        </th>
+        <th>
+            hexValue
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    </thead>
+    <tr ng-repeat="item in json2.colorsArray">
+        <td>
+            {{$index+1}}
+        </td>
+        <td>
+            {{item.colorName}}
+        </td>
+        <td>
+            {{item.hexValue}}
+        </td>
+        <td>
+            <button class="btn btn-default" ng-click="removeColor($index)">Remove item</button>
+        </td>
+    </tr>
+</table>
