@@ -51,6 +51,17 @@
             hexValue
         </th>
         <th>
+            <label>
+                <input type="checkbox" ng-model="data.checkAllCheckboxes" ng-change="checkAllCheckboxesEvent()">
+                <span ng-if="data.checkAllCheckboxes == true">
+                    Unselect all
+                </span>
+                <span ng-if="data.checkAllCheckboxes == false">
+                    Select all
+                </span>
+            </label>
+        </th>
+        <th>
 
         </th>
     </tr>
@@ -66,7 +77,22 @@
             {{item.hexValue}}
         </td>
         <td>
+            <label>
+                <input type="checkbox" ng-init="item.isActive = false" ng-model="item.isActive" ng-click="removeActiveAll(item.isActive)" />
+                    <span ng-if="item.isActive == true || data.checkAllCheckboxes == true">
+                        True epta!
+                    </span>
+                    <span ng-if="item.isActive == false">
+                        False epta!
+                    </span>
+            </label>            
+        </td>
+        <td>
             <button class="btn btn-default" ng-click="removeColor($index)">Remove item</button>
         </td>
     </tr>
 </table>
+
+<div class="row text-center">
+    <button class="btn btn-default" ng-click="removeSelected();">Delete All Cheked</button>
+</div>
